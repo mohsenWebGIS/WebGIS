@@ -1,0 +1,70 @@
+<div class="${baseClass}" style="display: none;">
+    <div class="container-fluid">
+        <span title="Close" class="just-close" data-dojo-attach-event="ondijitclick:hide">x</span>
+        <!-- <div class="row" > -->
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <h5> اطلاعات توصیفی عوارض</h5>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label id="LabeVis" for="info_visibility"></label>انتخاب لایه ها:</label>
+                    </td>
+                    <td>
+                        <select name="VisibleConstants" id="VisibleConstants" class="form-control">
+                            <option value="LAYER_OPTION_TOP" title="مشاهده بالاترین لایه">مشاهده بالاترین لایه
+                            </option>
+                            <option value="LAYER_OPTION_ALL"
+                                title="مشاهده تمام لایه ها بدون در نظر گرفتن اینکه قابل دسترسی در بزرگنمایی موجود هستند یا خیر">
+                                مشاهده تمام لایه ها </option>
+                            <option value="LAYER_OPTION_VISIBLE" title="مشاهده لایه های قابل مشاهده ">مشاهده لایه
+                                های قابل دسترسی
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label id="LabelInf" class="" for="info_LayerNames">لایه مدنظر : </label>
+                    </td>
+                    <td>
+                        <div class="claro">
+                            <input data-dojo-type="dijit/form/ComboBox" id="info_LayerNames">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="" for="locationBox"> مختصات عارضه انتخابی:</label>
+                    </td>
+                    <td>
+                        <div id="locationBox" disabled='disabled'></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <!-- <label id="LabelQW" class="" for="queryWereBox"> عارضه های انتخاب شده</label> -->
+                        <div class="nihilo" id='treeplace'style="text-align: right;">
+                            <div data-dojo-type='dijit/Tree' id='tree'></div>
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <!-- </div> -->
+
+
+
+
+
+    </div>
+
+
+
+
+</div>

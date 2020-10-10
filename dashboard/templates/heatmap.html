@@ -1,0 +1,69 @@
+<div class="${baseClass}" style="display: none;">
+    <div class="container-fluid">
+        <table class="table">
+            <span title="Close" class="just-close" data-dojo-attach-event="ondijitclick:hide">x</span>
+            <tbody>
+                <tr>
+                    <td colspan="3">
+                        <h6>تنضیمات نقشه هیت مپ مشترکین</h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <label for="codeOfClients">کد بازاری که نیاز به تولید هیت مپ آن می باشد را انتخاب نمایید</label>
+                        <div id="codeOfClients"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <p>
+                            <label for="valueControl">بر اساس مقادیر ورودی وزن دهی به مقادیر انجام شود؟</label>
+                            <input id="valueControl" type="checkbox" checked>
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3" >
+                        <p>Blur Radius : <span id="blurValue">10</span></p>
+                        <input id="blurControl" type="range" max=30 min=0 value=10 step=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <p>Max Value : <span id="maxValue">100</span></p>
+                        <input id="maxControl" type="range" max=500 min=0 value=100 step=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <p>Min Value : <span id="minValue">0</span></p>
+                        <input id="minControl" type="range" max=500 min=0 value=0 step=1 />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="btn bc" id="launch_heatmap"
+                            data-toggle="tooltip" title="اجرای هیت مپ بر اساس تنضیمات انجام گرفته"
+                            data-dojo-attach-event="ondijitclick:launch">
+                           
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn bc" id="clearHeatmapLayer"
+                            data-dojo-attach-event="ondijitclick:clearHeatmap" data-toggle="tooltip"
+                            title="حذف تقشه هیت مپ موجود">
+                        </button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn bc" id="clearAllLayer"
+                            data-toggle="tooltip" title="حذف کلیه لایه ها جهت مشاهده بهتر هیت مپ"
+                            data-dojo-attach-event="ondijitclick:hide">
+                        </button>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

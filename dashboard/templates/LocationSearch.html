@@ -1,0 +1,127 @@
+<div class="${baseClass}" style="display: none;">
+    <div class="container-fluid" style="border-width: 2px; border-color: gray;">
+        <span title="Close" class="just-close" data-dojo-attach-event="ondijitclick:hide">x</span>
+
+        <table dir="rtl" class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="container" style="text-align: right;">
+                            <h5>
+                                تعیین سیستم مختصات
+                            </h5>
+
+                            <div class="dropdown">
+                                <button type="button" class="btn  btn-secondary dropdown-toggle" data-toggle="dropdown"
+                                    data-toggle="tooltip"
+                                    title="سیستم مختصات مد نظر را انتخاب نمایید. سیستم مختصات پیش فرض WGS 3857  می باشد">
+                                    انتخاب
+                                    <b>
+                                        سیستم مختصات
+                                    </b>
+                                </button>
+
+                                <div class="dropdown-menu" id='dps'>
+
+                                    <a class="dropdown-item"  name='coor_name' data-toggle="tooltip"
+                                        title="102100" value='102100'>
+                                        Web_Mercator (102100)
+                                    </a>
+                                    <a class="dropdown-item"  name='coor_name' data-toggle="tooltip"
+                                        title="32637" value='32637'>
+                                        UTM Zone 37N (32637)
+                                    </a>
+                                    <a class="dropdown-item"  name='coor_name' data-toggle="tooltip"
+                                        title="32638" value='32638'>
+                                        UTM Zone 38N (32638)
+                                    </a>
+                                    <a class="dropdown-item"  name='coor_name' data-toggle="tooltip"
+                                        title="32639" value='32639'>
+                                        UTM Zone 39N (32639)
+                                    </a>
+                                    <a class="dropdown-item"  name='coor_name' data-toggle="tooltip"
+                                        title="32640" value='32640'>
+                                        UTM Zone 40N (32640)
+                                     </a>
+                                    <a class="dropdown-item"  name='coor_name' data-toggle="tooltip"
+                                        title="32641" value='32641'>
+                                        UTM Zone 41N (32641)
+                                     </a>
+                             </div>
+                            </div>
+                            <label for="cor_sisytem_selected">سیستم مختصات انتخاب شده</label>
+                            <h6 id='cor_sisytem_selected' title="102100">Web_Mercator (102100)</h6>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="container" style="text-align: right;">
+
+                            <h5>
+                                تعیین روش ورود اطلاعات
+                            </h5>
+                            <form dir="rtl">
+                                <div class="radio">
+                                    <label><input type="radio" name="optradio" id='xy_radio' checked value="0">مختصات x,y</label>
+                                </div>
+                                <div class="radio">
+                                    <label><input type="radio" name="optradio" id='latlong_radio' value="1">طول و عرض جغرافیایی </label>
+                                </div>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p> نمایش مختصات به صورت برجسب <br> در نقشه انجام شود؟
+                        </p>
+                    </td>
+                    <td style="text-align: right;">
+                        <label class="switch">
+                            <input type="checkbox" id="doeslocLabelneed" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td dir="rtl">
+                        <div class="form-group">
+                            <div class="nihilo">
+                                <div id="xinput"></div>
+                            </div>
+                        </div>
+                    </td>
+                    <td dir="rtl">
+                        <div class="form-group">
+                            <div class="nihilo">
+                                <div id="yinput"></div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a class="btn btn-secondary p-2 m-1 btw" id="runLocationSearch-btn" data-toggle="tooltip"
+                            title="اجرای جستجو بر اساس مختصات">
+                            اجرای جستجو
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-secondary p-2 m-1 btw" id="clearLocationSearch-btn" data-toggle="tooltip"
+                            title="پاک کردن اطلاعات وارد شده در فرم  جستجو بر اساس مختصات">
+                            پاک کردن صفحه
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+
+
+        </table>
+
+
+
+
+
+
+    </div>
+</div>

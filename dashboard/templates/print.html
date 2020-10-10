@@ -1,0 +1,118 @@
+<div class="${baseClass}" style="display: none;">
+  <span title="Close" class="just-close" data-dojo-attach-event="ondijitclick:hide">x</span>
+  <div class="container-fluid">
+    <div class="row">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <h3>فرم تهیه پرینت</h3>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="formatExoprt">نوع فایل خروجی را انتخاب نمایید</label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div id="formatExoprt"></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="layoutTemp">قالب خروجی را انتخاب نمایید</label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div id="layoutTemp"></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="checkbox" dir="rtl">
+                <label for="dpicheck">نیاز به تغییر کیفیت خروجی می باشد؟</label>
+                <input id="dpicheck" type="checkbox" value="">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="Customdpi">کیفیت خروجی را انتخاب نمایید (dpi)</label><br>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div id="Customdpi"></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="checkbox" dir="rtl">
+                <label for="sizecheck">نیاز به ورود سایز سفارشی کاغذ می باشد ؟</label>
+                <input id="sizecheck" type="checkbox" value="">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label dir="rtl" for="widthcustom">عرض کاغذ: </label>
+              <input type="text" class="form-control" id="widthcustom" />
+            </td>
+            <td>
+              <label dir="rtl" for="heightcustom">ارتفاع کاغذ: </label>
+              <input type="text" class="form-control" id="heightcustom" />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="checkbox" dir="rtl">
+                <label for="preserverScelech">نیاز به ورود مقیاس به صورت دستی می باشد؟</label>
+                <input id="preserverScelech" type="checkbox" value="">
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="CustomScale">مقیاس خروجی را وارد نمایید: </label><br>
+              <input type="text" id="CustomScale" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="tiitleOfPrint">عنوان نقشه: </label>
+              <input type="text" id="tiitleOfPrint" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <label for="authorPrint">تهیه کننده: </label>
+              <input type="text" id="authorPrint" class="form-control">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm-6 p-3">
+                    <button type="button" class="btn  btn-secondary m-2 btn-block" id="print_button"
+                      data-toggle="tooltip" title="ایجاد فایل پرینت">
+                      پرینت
+                    </button>
+                  </div>
+                  <div class="col-sm-6 p-3">
+                    <button type="button" class="btn  btn-secondary m-2 btn-block" id="print_reset"
+                      data-toggle="tooltip" title="پاک کردن صفحه ">
+                      پاک کردن
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

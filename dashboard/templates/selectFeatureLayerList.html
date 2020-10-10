@@ -1,0 +1,65 @@
+<div class="${baseClass}" style="display: none;">
+    <span title="Close" class="just-close" data-dojo-attach-event="ondijitclick:hide">x</span>
+    <div class="container-fluid" style="text-align: right;">
+        <table class="table">
+            <thead style="position: sticky;top: 0">
+                <tr>
+                    <th>
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-block btn-outline-secondary p-2 m-1 dropdown-toggle"
+                                data-toggle="dropdown" data-toggle="tooltip"
+                                title="جهت انجام جستجو های ترکیبی بین جسنجوی مکانی و جستجوی توصیفی از این آیکن استفاده نمایید ">
+                                روش
+                                <b>
+                                    انتخاب
+                                </b>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" name='seltype0' value="SELECTION_NEW" data-toggle="tooltip"
+                                    title="در این روش کلیه انتخاب های موجود در نقشه حذف شده و انتخاب جدید انجام میگیرد  &#xA این روش در حالت پیشفرض بکار می رود">
+                                    <b> انتخاب جدید </b> </a>
+                                <a class="dropdown-item" name='seltype0' value="SELECTION_ADD" data-toggle="tooltip"
+                                    title="در این روش انتخاب جدید به انتخاب های موجود اضافه می شود">
+                                    <b> اضافه کردن به انتخاب موجود</b></a>
+                                <a class="dropdown-item" name='seltype0' value="SELECTION_SUBTRACT" data-toggle="tooltip"
+                                    title="در این روش انتخاب جدید انجام شده از انتخاب های موجود حذف میشود">
+                                    <b>حذف از انتخاب موجود</b></a>
+                            </div>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        
+                        <span>حالت انتخاب: </span>
+                            <h6 id='seltype0'></h6>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                         لایه / هایی که قرار است انتخاب شوند:
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+
+                        <form dir="rtl" id='selectFeatureCB'>
+
+                        </form>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button type="button" class="btn  btn-secondary m-2 btn-block" id="refreshselect-btn"
+                        data-toggle="tooltip" title="انتخاب مجدد بر اساس لایه های متنخب"  style="display: none;">
+                    تجدید انتخاب بر اساس لایه های منتخب
+                    </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

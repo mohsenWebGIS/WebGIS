@@ -1,0 +1,81 @@
+<div class="${baseClass}" style="display: none;">
+    <b>فریم انتخاب ورودی جهت تعیین شیر </b>
+    <span title="Close" class="just-close" data-dojo-attach-event="ondijitclick:hide">x</span>
+    <div id="f"></div>
+    <div style="border: .2px solid gray;">
+        <table style="margin: 5%; width: 90%; border: .2px solid black;">
+            <tr>
+                <h5>روش انتخاب بر اساس اطلاعات توصیفی </h5>
+            </tr>
+            <tr>
+                <td class="tds">
+                    <label for="Iso_result">مقدار </label>
+                    <select id="Iso_result" name="Iso_result" size="3" style="width: 100% ; "> </select>
+
+                    <!-- <div id="Iso_result"> -->
+
+                    <!-- </div> -->
+                    <!-- <div id="Iso_result"></div> -->
+                </td>
+                <td>
+                    <br>
+                    <p>=</p>
+                </td>
+                <td class="tds">
+                    <label for="filedcombo">فیلد</label>
+                    <div id="filedcombo"></div>
+                </td>
+                <td class="tds">
+                    <label for="idcombo">لایه</label>
+                    <div id="idcombo"></div>
+                </td>
+            </tr>
+        </table>
+        <div style="visibility:visible;">
+            <p style="font-size:0.8rem;" dir="rtl">
+                انتخاب از لایه <b><span id="spanisolayer">layer</span></b> به مقدار <b><span id="spanisovalue">value</span></b> از فیلد <b><span id="spanisofield">field</span></b> انجام شده است
+            </p>
+        </div>
+
+        <table style="margin: 5%; width: 90%; border: .3px solid black;">
+            <tr>
+                <h5>روش انتخاب گرافیکی </h5>
+            </tr>
+            <tr>
+                <td>
+                    <div id="btnContaineriso">
+                        <div id="circle_iso" type="button" value="" title="انتخاب دایره ای"></div>
+                        <div id="extent_iso" type="button" value="" title="انتخاب  نقطه ای"></div>
+                        <div id="freehand_polygon_iso" type="button" value="" title="انتخاب پلیگون آزاد"></div>
+                    </div>
+                </td>
+
+            </tr>
+        </table>
+
+
+        <table style="margin: 5%; width: 90%; border: .3px solid black;">
+            <tr>
+                <h4>اجرای فرآیند</h4>
+
+            </tr>
+            <tr>
+                <td class="tds">
+                    <!-- <label for="RunisolationP">اجرای مجدد</label> -->
+                    <div id="csvexport" type="button"></div>
+                </td>
+                <td class="tds">
+                    <!-- <label for="RunisolationP">اجزای ایزولاسیون</label> -->
+                    <div id="RunisolationP" type="button"></div>
+                </td>
+
+            </tr>
+        </table>
+        <h4 dir="rtl" id='finalrepiso' style="display: none;">
+            <br> جهت قطع گاز در محدوده انتخابی لازم است شیر شماره<span id='valvereportiso'></span> بسته شود.
+            <br>
+            <p> تعداد مشترکین خارج شده از سرویس در صورت قطع گاز <span id='clientreportiso'></span> می باشد</p>
+        </h4>
+    </div>
+
+</div>

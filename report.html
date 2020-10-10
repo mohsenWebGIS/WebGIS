@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <title> سامانه مدیریت شبکه گاز </title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="../GIS/asset/icon/favicon.ico">
+
+  <link rel="shortcut icon" href="../GIS/asset/icon/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../GIS/asset/icon/favicon.ico" type="image/x-icon">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet"
+    href="http://192.168.56.5/arcgis_js_v333_api/arcgis_js_api/library/3.33/3.33/dijit/themes/nihilo/nihilo.css">
+  <link rel="stylesheet"
+    href="http://192.168.56.5/arcgis_js_v333_api/arcgis_js_api/library/3.33/3.33/esri/css/esri.css" />
+  <link rel="stylesheet" href="../GIS/asset/bootstrap.min.css">
+  <script src="../GIS/asset/jquery.min.js"></script>
+  <script src="../GIS/asset/popper.min.js"></script>
+  <script src="../GIS/asset/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../GIS/css/style.css">
+
+
+  <script type="text/javascript">
+    dojoConfig = {
+      packages: [{
+        name: 'report',
+        location: location.pathname.replace(/\/[^\/]*$/, '') + '/dashboard'
+      }, {
+        name: 'jquery',
+        location: location.pathname.replace(/\/[^\/]*$/, '') + '/Jquery_3.3.1',
+        main: "jquery"
+      },]
+    };
+  </script>
+  <script src="http://192.168.56.5/arcgis_js_v333_api/arcgis_js_api/library/3.33/3.33/init.js"></script>
+
+</head>
+
+<body>
+  <div class="container-fluid bg-secondary ">
+    <div class="row " style="height: 5%;">
+      <div class="col-sm-2 ">
+        <table class="table ">
+          <tbody>
+            <tr>
+              <td>
+                <button type="button" class="btn btn-block btn-outline-dark bg-warning text-white" id="check"
+                  data-toggle="tooltip" title="خروج از سایت">
+                  خروج
+                </button>
+              </td>
+              <td>
+                <button type="button" class="btn btn-block btn-outline-dark bg-warning text-white" id="c2"
+                  data-toggle="tooltip" title="بازگشت به صفحه اصلی وب">
+                  بازگشت
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-sm-2 offset-7">
+        <table class='table table-borderless'>
+          <tbody>
+            <tr>
+              <td>
+                <div class="dropdown">
+                  <button type="button" class="btn btn-block btn-outline-dark bg-warning text-white"
+                    data-toggle="dropdown" id="" data-toggle="tooltip" title=" دسترسی به زون بندی" disabled>
+                    انتخاب زون
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" id='zahedanE'> <b> شهر زاهدان </b> </a>
+                    <a class="dropdown-item" href="#" id='zabolE'> <b> شهر زابل </b></a>
+                    <a class="dropdown-item" href="#" id='iranshahrE'> <b>شهر ایرانشهر </b></a>
+                    <a class="dropdown-item" href="#" id='bazmanE'> <b>شهر بزمان </b></a>
+                    <a class="dropdown-item" href="#" id="dalganE"> <b>شهر دلگان </b></a>
+                    <a class="dropdown-item" href="#" id='ostanE'> استان سیستان و بلوچستان</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div class="dropdown ">
+                  <button type="button" class="btn btn-block bg-warning dropdown-toggle "
+                    data-toggle="dropdown" id="" data-toggle="tooltip" title="تعیین محدوده جغرافیایی جهت جستجو">
+                    محدوده جغرافیایی
+                  </button>
+                  <div class="dropdown-menu">
+                    <button class="dropdown-item" name='selc_extent' title="extent" id='' value="">محدوده زوم
+                      موجود</button>
+                    <button class="dropdown-item" name='selc_extent' title="zahedanextent" id='' value="0">محدوده
+                      <b> شهر زاهدان </b> </button>
+                    <button class="dropdown-item" name='selc_extent' title="zabolextent" id='' value="1">محدوده <b>
+                        شهر زابل </b></button>
+                    <button class="dropdown-item" name='selc_extent' title="iranshahrextent" id='' value="2">محدوده
+                      <b>شهر ایرانشهر </b></button>
+                    <button class="dropdown-item" name='selc_extent' title="bazmanextent" id='' value="3">محدوده
+                      <b>شهر بزمان </b></button>
+                    <button class="dropdown-item" name='selc_extent' title="dalganextent" id='' value="4">محدوده
+                      <b>شهر دلگان </b></button>
+                    <button class="dropdown-item" name='selc_extent' title="ostanextnet" id='' value="5"> محدوده
+                      استان سیستان و بلوچستان</button>
+                    <button class="dropdown-item" name='selc_extent' title="iranextent" id='' value="6">محدوده
+                      ایران</button>
+                  </div>
+                </div>
+              </td>
+
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6  ">
+
+        <div id='reportmap' style="height: 100%;"></div>
+      </div>
+      <div class="col-sm-4 ">
+        <table class="table  ">
+          <tr>
+            <td style="height: 50%;">
+              <span class="badge badge-light" style="font-size: 1rem;"> درصد
+                <span class="badge badge-info " style="font-size: 1rem;">
+                  گاز تزریق شده شده
+                </span>
+                نسبت به شبکه اجرا شده
+                توزیع و تغذیه</span>
+              <div class="nihilo">
+                <div id="base_gaue1"></div>
+                <div id='gauge1'></div>
+              </div>
+              <!-- <span class="badge badge-primary " style="font-size: 1rem">شبکه توزیع </span><span
+                style="font-size: 3rem;color: blue;">&#8594;</span>
+              <span class="badge badge-dark" style="font-size: 1rem">شبکه تغذیه </span><span
+                style="font-size: 3rem;color: black;">&#8594;</span> -->
+            </td>
+          </tr>
+          <tr>
+            <td style="height:50%;">
+              <span class="badge badge-light" style="font-size: 1rem;"> درصد
+                <span class="badge badge-info " style="font-size: 1rem;">
+                  شبکه اجرا شده</span>
+                نسبت به شبکه طراحی شده
+                توزیع و تغذیه</span>
+              <div class="nihilo">
+                <div id="base_gaue2"></div>
+
+                <div id='gauge2'></div>
+              </div>
+              <span class="badge badge-primary " style="font-size: 1rem">شبکه توزیع </span><span
+                style="font-size: 3rem;color: blue;">&#8594;</span>
+              <span class="badge badge-dark" style="font-size: 1rem">شبکه تغذیه </span><span
+                style="font-size: 3rem;color: black;">&#8594;</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+    </div>
+    <div class="row " style="height: 38%;">
+      <div class="col-sm-5">
+        <table class="table ">
+          <!-- <tbody> -->
+          <tr>
+            <td>
+              <span class="badge badge-info" style="font-size: 1rem;"> کد بازاریابی بر اساس نوع کد
+                <span class="badge badge-light " style="font-size: 1rem;">
+                  توزیع درصدی</span>
+              </span>
+              <div id="chartTwo0"></div>
+              <!-- <span class="badge badge-light" style="font-size: 1rem;"> راهنمای نمودار
+              </span> -->
+              <span id="legendTwo0"></span>
+            </td>
+            <td>
+              <span class="badge badge-info" style="font-size: 1rem;"> مشترکین بر اساس نوع اشتراک
+                <span class="badge badge-light " style="font-size: 1rem;">
+                  توزیع درصدی</span>
+              </span>
+              <div id="chartTwo"></div>
+              <!-- <span class="badge badge-light" style="font-size: 1rem;"> راهنمای نمودار
+              </span> -->
+              <span id="legendTwo"></span>
+            </td>
+          </tr>
+          <!-- </tbody> -->
+        </table>
+
+      </div>
+      
+      <div class="col-sm-7" >
+        <table class="table ">
+          <!-- <tbody> -->
+          <tr>
+            <td>
+              <span class="badge badge-info" style="font-size: 1rem;"> ازبیلت شبکه <span class="badge badge-danger"
+                  style="font-size: 1rem;">توزیع</span> اجرا شده نسبت به شبکه طراحی شده
+                <span class="badge badge-light " style="font-size: 1rem;">
+                  توزیع درصدی سایز لوله</span>
+              </span>
+              <div id="columchrt02"></div>
+              <div id="legcolumchrt02"></div>
+            </td>
+            <td>
+              <span class="badge badge-info" style="font-size: 1rem;"> ازبیلت شبکه <span class="badge badge-danger"
+                style="font-size: 1rem;">تغذیه</span> اجرا شده نسبت به شبکه طراحی شده
+              <span class="badge badge-light " style="font-size: 1rem;">
+                توزیع درصدی سایز لوله</span>
+            </span>
+              <div id="columchrt01"></div>
+              <div id="legcolumchrt01"></div>
+            </td>
+          </tr>
+          <!-- </tbody> -->
+        </table>
+      </div>
+
+
+    </div>
+  </div>
+  <script src="../GIS/js/report.js"></script>
+</body>
+
+</html>

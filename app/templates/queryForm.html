@@ -1,0 +1,268 @@
+<div class="${baseClass}" style="display: none;">
+	<div class="container-fluid">
+		<div class="row m-2">
+
+			<div class="col-sm-12 p-1">
+				<table>
+					<tr>
+						<td>
+							<span title="Close" class="just-close S_sapn" data-dojo-attach-event="ondijitclick:hide">x</span>
+						</td>
+						<td>
+							<h6>جستجو بر اساس اطلاعات توصیفی لایه ها</h6>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+			<div class="col-sm-4">
+				<div class="dropdown">
+					<button type="button" class="btn btn-block btn-outline-secondary p-2 m-1 dropdown-toggle"
+						data-toggle="dropdown" data-toggle="tooltip"
+						title="جهت انجام جستجو های ترکیبی بین جسنجوی مکانی و جستجوی توصیفی از این آیکن استفاده نمایید ">
+						روش
+						<b>
+							انتخاب
+						</b>
+					</button>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" name='seltype' value="SELECTION_NEW" data-toggle="tooltip"
+							title="در این روش کلیه انتخاب های موجود در نقشه حذف شده و انتخاب جدید انجام میگیرد  &#xA این روش در حالت پیشفرض بکار می رود">
+							<b> انتخاب جدید </b> </a>
+						<a class="dropdown-item" name='seltype' value="SELECTION_ADD" data-toggle="tooltip"
+							title="در این روش انتخاب جدید به انتخاب های موجود اضافه می شود">
+							<b> اضافه کردن به انتخاب موجود</b></a>
+						<a class="dropdown-item" name='seltype' value="SELECTION_SUBTRACT" data-toggle="tooltip"
+							title="در این روش انتخاب جدید انجام شده از انتخاب های موجود حذف میشود">
+							<b>حذف از انتخاب موجود</b></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<label for="LayerName">انتخاب لایه</label>
+				<div class="nihilo">
+					<div id="LayerName"></div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="dropdown ">
+					<button type="button" class="btn btn-block btn-outline-secondary p-2 m-1 dropdown-toggle "
+						data-toggle="dropdown" id="" data-toggle="tooltip" title="تعیین محدوده جغرافیایی جهت جستجو">
+						محدوده جغرافیایی
+					</button>
+					<div class="dropdown-menu">
+						<button class="dropdown-item" name='selc_extent' title="extent" id='' value="">محدوده زوم
+							موجود</button>
+						<button class="dropdown-item" name='selc_extent' title="zahedanextent" id='' value="0">محدوده
+							<b> شهر زاهدان </b> </button>
+						<button class="dropdown-item" name='selc_extent' title="zabolextent" id='' value="1">محدوده <b>
+								شهر زابل </b></button>
+						<button class="dropdown-item" name='selc_extent' title="iranshahrextent" id='' value="2">محدوده
+							<b>شهر ایرانشهر </b></button>
+						<button class="dropdown-item" name='selc_extent' title="bazmanextent" id='' value="3">محدوده
+							<b>شهر بزمان </b></button>
+						<button class="dropdown-item" name='selc_extent' title="dalganextent" id='' value="4">محدوده
+							<b>شهر دلگان </b></button>
+						<button class="dropdown-item" name='selc_extent' title="ostanextnet" id='' value="5"> محدوده
+							استان سیستان و بلوچستان</button>
+						<button class="dropdown-item" name='selc_extent' title="iranextent" id='' value="6">محدوده
+							ایران</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-3 h-50">
+				<label for="FieldNamelist">انتخاب فیلد</label>
+			</div>
+			<div class="col-sm-8">
+				<div class="nihilo">
+					<div id="FieldNamelist"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-5 border border-primary p-1 m-2">
+				<table class="table">
+					<tbody>
+						<tr>
+							<td>
+								<h6>مشاهده و انتخاب مقادیر فیلد</h6>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<select id="justgetuniqe" name="justgetuniqe" size="7" style="width: 100%"> </select>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<button class="btn  btn-block btn-light " id="getUniqueValue" type="button"
+									value="مشاهده مقادیر منحصر به فرد در فیلد مدنظر">
+									مشاهده مقادیر لایه
+								</button>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-sm-6 b border border-primary p-1 m-2">
+				<div id="Querytool">
+					<table class="table " dir="ltr">
+
+						<tbody>
+							<tr class="d-flex">
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="equle" type="button" value="="
+										data-dojo-attach-event="ondijitclick:getvalue">=</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="notequle" type="button" value="<>"
+										data-dojo-attach-event="ondijitclick:getvalue">
+										<>
+									</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="like" type="button" value="LIKE"
+										data-dojo-attach-event="ondijitclick:getvalue">
+										LIKE
+									</button>
+								</td>
+							</tr>
+							<tr class="d-flex">
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="bigger" type="button" value=">"
+										data-dojo-attach-event="ondijitclick:getvalue">
+										>
+									</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="bigger_equal" type="button" value='>='
+										data-dojo-attach-event="ondijitclick:getvalue">
+										>=
+									</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="and" type="button" value='AND'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										AND
+									</button>
+								</td>
+							</tr>
+							<tr class="d-flex">
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="shorter" type="button" value='<'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										< </button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="shorter_equal" type="button"
+										value='<=' data-dojo-attach-event="ondijitclick:getvalue">
+										<= </button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="or" type="button" value='OR'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										OR
+									</button>
+								</td>
+							</tr>
+							<tr class="d-flex">
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " id="percent" type="button" value='%'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										%
+									</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " type="button" id="prentecies" value='()'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										( )
+									</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " type="button" id="Not" value='NOT'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										NOT
+									</button>
+								</td>
+							</tr>
+							<tr class="d-flex">
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " type="button" id="is" value='IS'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										IS
+									</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " type="button" id="in" value='IN'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										IN
+									</button>
+								</td>
+								<td class="col-sm-4  text-left">
+									<button class="btn  btn-block btn-light " type="button" id="nullicon" value='NULL'
+										data-dojo-attach-event="ondijitclick:getvalue">
+										NULL
+									</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12  border border-primary ">
+				<table>
+					<tr>
+						<td>
+							<h6>فرم انتخاب از لایه: </h6>
+						</td>
+						<td>
+							<span id='spanname'></span>
+						</td>
+					<tr>
+						<td>
+							<p id='seltype'></p>
+						</td>
+						<td>
+							<p id='exttype'></p>
+						</td>
+					</tr>
+
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="form-group">
+					<label for="comment">فرم جستجوی </label>
+					<textarea class="form-control" rows="4" id="STA_result" dir="ltr"></textarea>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<table class="table">
+				<tr>
+					<td>
+						<button class="btn  btn-block btn-light " type="button" id="queryRun" value=''>
+							اجرای جستجوی پیشرفته
+						</button>
+					</td>
+					<td>
+						<button class="btn  btn-block btn-light " type="button" id="queryAll" value=''>
+							انتخاب کل لایه
+						</button>
+					</td>
+					<td>
+						<button class="btn  btn-block btn-light " type="button" id="queryClear" value=''>
+							پاک کردن تنضیمات
+						</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

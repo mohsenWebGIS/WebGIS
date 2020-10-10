@@ -1,0 +1,72 @@
+<div class="${baseClass}" style="display: none;">
+    <div class="container-fluid" dir="rtl">
+        <div class="row">
+            <div class="col-sm-1">
+                <table dir="rtl">
+                    <tr>
+                        <td>
+                            <div class="just-close S_sapn" title="بستن ویدجت و پاک شدن کلیه تنضیمات" data-dojo-attach-event="onclick:hide">x
+                            </div>
+                        </td>
+                        <!-- <td>
+                            <div class="just-M S_sapn" data-dojo-attach-event="onclick:max_min" title="بزرگنمایی"
+                                id='maximize'>
+                                &#10064;
+                            </div>
+                        </td> -->
+                        <td> 
+                            <div class="just-close S_sapn" title=" بستن ویدجت بدون حذف تنضیمات" data-dojo-attach-event="onclick:hide">-
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="just-BG S_sapn" data-dojo-attach-event="onchange:Bground"
+                                title="حذف یا نمایش پس زمینه" >
+                                <input type="checkbox" name="chkShowBusn" id="chkShowBusn" s>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+<div class="row">
+    <div class="col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">مختصات بر حسب x,y</th>
+                    <th scope="col"> طول و عرض جغرافیایی</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id='info_x'></td>
+                    <td id='info_long'></td>
+                </tr>
+                <tr>
+                    <td id='info_y'></td>
+                    <td id='info_lat'></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding-bottom: 2rem;">
+                        <div id="scale-widget"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="alert" id="alert_slid">
+                            <button type="button" class="close" data-dismiss="alert">x</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+        <!-- <br> -->
+
+
+
+    </div>
+</div>
